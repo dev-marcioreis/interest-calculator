@@ -21,7 +21,49 @@
 	<script src="assets/js/main.js" defer></script>
 	<title>Calculadora de Juros Compostos</title>
 </head>
+
 <body>
-    
+
+    <div class="container">
+        <div class="calculator">
+            <div class="heading">
+                <h2>Calculadora de Juros Compostos</h2>
+                <small>O rendimento do seu dinheiro ao longo do tempo</small>
+            </div>
+            <form class="form-content">
+                <div class="input-group">
+                    <label for="initialamount">valor inicial</label>
+                    <input type="number" id="initialamount">
+                </div>
+                <div class="input-group">
+                    <label for="years">tempo investido</label>
+                    <input type="number" id="years">
+                </div>
+                <div class="input-group">
+                    <label for="rates">taxas estimadas(%)</label>
+                    <input type="number" id="rates">
+                </div>
+                <div class="input-group">
+                    <label for="rates">intervalo composto</label>
+                    <select>
+                        <option></option>
+                        <option value="1">anualmente</option>
+                        <option value="4">trimestralmente</option>
+                        <option value="2">semestral</option>
+                        <option value="12">mensalmente</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <button>calcular</button>
+                </div>
+            </form>
+        </div>
+        <div class="results">
+            <canvas id="data-set"></canvas>
+        </div>
+    </div>
+
+
+
 </body>
 </html>
