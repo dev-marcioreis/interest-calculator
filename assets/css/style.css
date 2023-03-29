@@ -40,7 +40,6 @@
 }
 .input-group label {
     display: block;
-    text-transform: capitalize;
     margin-block-end: .3rem;
 }
 .input-group label i {
@@ -65,9 +64,12 @@
     margin-right: .5rem;
 }
 .results {
+    display: flex;
+    align-items: center;
     width: 50%;
     box-shadow: 0px 3px 6px hsla(0, 0%, 0%, 0.4);
     margin: 1rem;
+    padding: 1rem;
 }
 
 
