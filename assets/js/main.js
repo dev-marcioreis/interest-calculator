@@ -1,10 +1,12 @@
 const context = document.getElementById('data-set').getContext('2d')
+let line = new Chart(context, {})
 
 const initialamount = document.getElementById('initialamount')
 const years = document.getElementById('years')
 const rates = document.getElementById('rates')
 const compound = document.getElementById('compound')
 const button = document.querySelector('.input-group button')
+const messege = document.getElementById('messege')
 
 button.addEventListener('click', calculateGrowth)
 
@@ -13,6 +15,10 @@ const labels = []
 
 function calculateGrowth(e) {
     e.preventDefault()
+    data.length = 0
+    labels.length = 0
+
+    let growth = 0
 
     try {
 
@@ -23,9 +29,12 @@ function calculateGrowth(e) {
 
         for(let i = 1; i <= period; i++) {
             const final = initial * Math.pow(1 + ((interest / 100) / comp), comp * i)
-            data.push(final)
+            data.push(toDecimal(final, 2))
             labels.push('Ano ' + i)
+            growth = toDecimal(final, 2)
         }
+
+        messege.innerText = `Valor acumulado: R$ ${growth}`
 
         drawGraph()
 
@@ -35,7 +44,8 @@ function calculateGrowth(e) {
 }
 
 function drawGraph() {
-    new Chart(context, {
+    line.destroy()
+    line =  new Chart(context, {
         type: 'line',
         data: {
             labels,
