@@ -7,7 +7,7 @@ O objetivo é simular quanto rende em um determinado período.
 
 ## 🚀 Finalizado.
 
-## 📋 Técnologias
+## 📋 Tecnologias
 JavaScript
 
 ## ✒️ Autor
